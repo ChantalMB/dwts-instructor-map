@@ -1,0 +1,499 @@
+:: StoryData
+{
+        "ifid": "49BA21B4-F2CD-42F1-A3EE-C5972302FA68",
+        "format": "SugarCube",
+        "format-version": "2.36.1",
+        "start": "Start"
+}
+
+:: StoryInit
+<<cacheaudio "game-theme" "./assets/audio/game-theme.mp3">>
+<<cacheaudio "opening-message" "./assets/audio/opening-message.mp3">>
+<<cacheaudio "pigeon12" "./assets/audio/pigeon12.mp3">>
+<<cacheaudio "pigeon34" "./assets/audio/pigeon34.mp3">>
+<<cacheaudio "kettle" "./assets/audio/kettle.mp3">>
+<<cacheaudio "fire" "./assets/audio/fire.mp3">>
+<<cacheaudio "shop-bell" "./assets/audio/shop-bell.mp3">>
+<<cacheaudio "church-bell" "./assets/audio/church-bell.mp3">>
+<<cacheaudio "bicycle-bell" "./assets/audio/bicycle-bell.mp3">>
+<<cacheaudio "motor-car" "./assets/audio/motor-car.mp3">>
+<<cacheaudio "streetcar-station" "./assets/audio/streetcar-station.mp3">>
+<<cacheaudio "pigeon-coo" "./assets/audio/pigeon-coo.mp3">>
+<<cacheaudio "westminster" "./assets/audio/westminster.mp3">>
+<<cacheaudio "clock-tick" "./assets/audio/clock-tick.mp3">>
+<<cacheaudio "air-raid" "./assets/audio/air-raid-siren.mp3">>
+<<cacheaudio "fire-engine" "./assets/audio/fire-engine.mp3">>
+<<cacheaudio "second-message" "./assets/audio/second-message.mp3">>
+<<cacheaudio "air-raid-bbc" "./assets/audio/bbc-air-raid.mp3">>
+
+:: StoryTitle
+Passage Links for Game Master
+
+:: Start
+<<nobr>>
+<div style="height: 100%;max-height: 90vh;overflow: scroll;">
+<h1>Table of Contents</h1>
+<ul>
+    <li><a href="#main">Main Story</a></li>
+    <li><a href="#gm">Game Master</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#baileys">Baileys</a></li>
+    <li><a href="#empeys">Empeys</a></li>
+    <li><a href="#engels">Engels</a></li>
+    <li><a href="#hendersons">Hendersons</a></li>
+    <li><a href="#sklars">Sklars</a></li>
+</ul>
+
+<h1 id="main">Main Story</h1>
+[[StartGame|StartGame]]
+<br>
+[[BackgroundKnowledge|BackgroundKnowledge]]
+<br>
+[[SelectHousehold1|SelectHousehold1]]
+<br>
+[[LunchtimeReports|LunchtimeReports]]
+<br>
+[[SelectHousehold2|SelectHousehold2]]
+<br>
+[[ConclusionRounds1and2|ConclusionRounds1and2]]
+<br>
+[[Greenep|Greenep]]
+<br>
+[[SelectHousehold3|SelectHousehold3]]
+<br>
+[[FinalDecisions|FinalDecisions]]
+<br>
+[[AirDefence|AirDefence]]
+<br>
+[[FinalCredits|FinalCredits]]
+<br>
+
+<h1 id="gm">Game Master</h1>
+[[Gamemaster1|Gamemaster1]]
+<br>
+[[Gamemaster2|Gamemaster2]]
+<br>
+[[Gamemaster3|Gamemaster3]]
+<br>
+
+<h1 id="community">Community</h1>
+[[Community1|Community1]]
+<br>
+[[Community2|Community2]]
+<br>
+[[Community3|Community3]]
+<br>
+
+<h1 id="baileys">Baileys</h1>
+[[Baileys1|Baileys1]]
+<br>
+[[Baileys2|Baileys2]]
+<br>
+[[Baileys3|Baileys3]]
+<br>
+
+<h1 id="empeys">Empeys</h1>
+[[Empeys1|Empeys1]]
+<br>
+[[Empeys2|Empeys2]]
+<br>
+[[Empeys3|Empeys3]]
+<br>
+
+<h1 id="engels">Engels</h1>
+[[Engels1|Engels1]]
+<br>
+[[Engels2|Engels2]]
+<br>
+[[Engels3|Engels3]]
+<br>
+
+<h1 id="hendersons">Hendersons</h1>
+[[Hendersons1|Hendersons1]]
+<br>
+[[Hendersons2|Hendersons2]]
+<br>
+[[Hendersons3|Hendersons3]]
+<br>
+
+<h1 id="sklars">Sklars</h1>
+[[Sklars1|Sklars1]]
+<br>
+[[Sklars2|Sklars2]]
+<br>
+[[Sklars3|Sklars3]]
+<br>
+</div>
+<</nobr>>
+
+:: StartGame
+<<set _vapour to [7, 12, 3, 16, 8, 14, 1, 9, 17, 5, 11, 15, 4, 6, 18, 2, 13, 10, 19]>>
+<div class="clock-container">
+    <img class="clock" src="./assets/images/clock.svg"/>
+</div>
+<<nobr>>
+<<audio "kettle" volume 0 fadeoverto 30 0.75>>
+<<audio "clock-tick" volume 0.15 loop play>>
+
+<div style="padding: 115px 0;">
+<<type 90ms>>\
+<span class="typewriter">7:30 a.m. on Monday, December 22, 1940.</span>
+\<</type>>
+
+<<timed 5s t8n>>
+<p>The bombing has finally stopped. You have returned to your home in Cheetham Hill, either from your backyard air raid shelter or from the local community air raid shelter, located at the Cheetham Hill Assembly Halls.</p>
+
+<<next 5s>>
+<p>Someone unmasks the windows and someone else makes a big pot of Tetley’s tea. You all sit down around the kitchen table to try and make sense of the events of the night.</p>
+
+<<next 5s>>
+<p>Before the next blackout at sunset tonight, you have to [[gather more information|BackgroundKnowledge]] about the air raids and the damage that has been done to your city and neighbourhood.</p>
+<</timed>>
+</div>
+
+<div class="teacup-container">
+    <div class="vapour">
+        <<for _i to 0; _i lt _vapour.length; _i++>>
+            <<set _style to "--i:"+_vapour[_i]+";">>
+            <span @style="_style"></span>
+        <</for>>
+    </div>
+    <img class="teacup" src="./assets/images/teacup-a.svg"/>
+</div>
+<</nobr>>
+
+:: BackgroundKnowledge
+<<audio "kettle" volume 0.75 fadeout>>
+<<audio "clock-tick" volume 0.15 fadeout>>
+<<nobr>>
+<p class="fade-text">In addition to your background knowledge of the war, you also know that:</p>
+<ul>
+    <<timed 3s t8n>>
+    <li>At 6:38 p.m. on Sunday, December 22, the air raid sirens rang out.</li>
+    <<audio "air-raid" volume 0 fadeoverto 10 0.75>>
+    <<next>>
+    <li>The German air force dropped their bombs in “waves and waves”, sometimes a dozen at a time.</li>
+    <<next>>
+    <li>The bombs targeted central Manchester, including Manchester Cathedral, only 2.5 kilometres south of your home.</li>
+    <div class="firetruck-container">
+        <img style="width:500px;" src="./assets/images/firetruck.svg"/>
+    </div>
+    <<next>>
+    <li>You can smell smoke and the sky is lit up from the fires burning in the city.</li>
+    <<audio "fire-engine" volume 0 fadeoverto 10 0.55>>
+    <<next>>
+    <li>The Manchester fire brigade is depleted because many men and trucks were sent to Liverpool the day before when the bombs fell on that city.</li>
+    <</timed>>
+</ul>
+
+<<timed 17s t8n>>
+<p>You must decide what to do over the next eight hours: assess the information that you have and gather new information as best you can.</p>
+
+<p>The stakes are high. [[You want your family to be safe.|SelectHousehold1]]</p>
+<</timed>>
+
+<</nobr>>
+
+:: SelectHousehold1
+<<audio "air-raid" volume 0.75 fadeout>>
+<h1 class="fade-text" style="text-align:center;">Round 1</h1>
+
+[[Gamemaster's clock|Gamemaster1]]
+
+Select your household.
+
+[[Household 1: The Hendersons|Hendersons1]]
+[[Household 2: The Empeys|Empeys1]]
+[[Household 3: The Engels|Engels1]]
+[[Household 4: The Sklars|Sklars1]]
+[[Household 5: The Baileys|Baileys1]]
+
+[[Community Members|Community1]]
+
+<div class="household-page">
+  <img style="width:450px;" src="./assets/images/parachute.svg">
+</div>
+
+:: LunchtimeReports
+<<nobr>>
+<<audio "fire" volume 0 fadeoverto 45 0.75>>
+
+<<timed 7s>>
+<section class="fade-text">
+    <div class="pulsating-light"></div>
+</section>
+
+<<for $i = 1;$i <= 100; $i++>>
+    <div class="circle-container">
+        <div class="circle"></div>
+    </div>
+<</for>>
+<</timed>>
+
+<<type 90ms>>\
+<span class="typewriter">1:00 p.m. on Monday, December 22, 1940.</span>
+\<</type>>
+
+<<timed 3.5s>>
+    <<audio "church-bell" volume 0.55 play>>
+<</timed>>
+
+<<timed 5s t8n>>
+<p>Some household members have gone to their workplaces to gather more information and check in on their fellow employees.</p>
+
+<<next>>
+<p>Work is virtually impossible so they have returned home for lunch.</p>
+
+<<next>>
+<p>And community members are on the move, visiting households in your neighbourhood to share information.</p>
+
+<<next>>
+<p>Everyone knows (or suspects) that Central Manchester is devastated– the Luftwaffe bombing raid has destroyed buildings, roads, and transportation infrastructure including railway lines.</p>
+
+<<next 2s>>
+<p>And everywhere, there is @@color:orange;fire, fire, fire.@@</p>
+
+<<next 7s>>
+<p>More tea has been brewed to accompany your lunch, and [[new information will be shared.|SelectHousehold2]]</p>
+
+<</timed>>
+<</nobr>>
+
+:: SelectHousehold2
+<<audio "fire" volume 0.75 fadeout>>
+<h1 class="fade-text" style="text-align:center;">Round 2</h1>
+Select your household.
+
+[[Gamemaster's Clock|Gamemaster2]]
+
+[[Household 1: The Hendersons|Hendersons2]]
+[[Household 2: The Empeys|Empeys2]]
+[[Household 3: The Engels|Engels2]]
+[[Household 4: The Sklars|Sklars2]]
+[[Household 5: The Baileys|Baileys2]]
+
+[[Community Members|Community2]]
+
+<div class="household-page-form">
+  <img style="width:350px;" src="./assets/images/form.svg">
+</div>
+
+:: ConclusionRounds1and2
+<<nobr>>
+<<audio "game-theme" volume 0.75 fadeout>>
+<p id="panel1" class="fade-text" style="padding-top:55px;font-size:23px;text-align:center;">You have now finished Rounds 1 and 2, and you have more primary information about what is happening in your city.</p>
+
+<<timed 2s t8n>>
+<p id="panel1-2" style="font-size:17px;text-align:center;">But can you make a decision about where to take shelter?</p>
+
+<<next 2s>>
+<div id="link1" onclick="$('#panel1').toggle(); $('#panel1-2').toggle(); $('#link1').toggle(); $('#panel2').toggle();" style="position:absolute;left:0;bottom:-15px;">
+    <img class="tower-backlight" src="./assets/images/airraid-shelter.svg"/>
+</div>
+<</timed>>
+<div class="fade-text" id="panel2" style="display: none;">
+    <div class="fade-text notepad-container">
+        <div class="notepad">
+            <div class="top">
+                <div style="display:flex;align-items:center;justify-content:end;height:100%;">
+                    <img class="megaphone-backlight" src="./assets/images/megaphone.svg" onclick="document.getElementById('recording3').play();"/>
+                    <audio id="recording3" src="./assets/audio/r2p8.mp3"></audio>
+                </div>
+            </div>
+            <div class="paper-container">
+                <div class="paper">
+                    What a morning! There is so much devastation and chaos in your city.<br>
+                    <br>
+                    But now you have more information than when you started about the damage and potential threats in the air.<br>
+                    <br>
+                    Some evidence has come from people you trust: but are all witness authoritative? And do you believe your own point of view is trustworthy?<br>
+                    <br>
+                    In Rounds 3 and 4, you will gather even more information to make your ultimate decision. What will you do when the blackout hour arrives: you stay home or go to the community shelter?<br>
+                    <br>
+                    Remember: The stakes are high. Don’t be fooled by bad information.<br>
+                    <br>
+                    Be alert and think critically.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<</nobr>>
+
+:: Greenep
+<<nobr>>
+<<type 90ms>>\
+<span class="typewriter">3:00 p.m, Greenep's Tobacco and Sweet Shop.</span>
+\<</type>>
+
+<div class="bike">
+  <div class="part frame">
+    <div class="bar left-top"></div>
+    <div class="bar left-bottom"></div>
+    <div class="bar left"></div>
+    <div class="bar top"></div>
+    <div class="bar bottom"></div>
+    <div class="bar right"></div>
+  </div>
+  <div class="part saddle">
+    <div class="sit-here"></div>
+    <div class="saddlepen"></div>
+  </div>
+  <div class="part handlebar">
+    <div class="stem"></div>
+    <div class="connector"></div>
+    <div class="prehandle"></div>
+    <div class="handle"></div>
+  </div>
+  <div class="part pedals">
+    <div class="inside"></div>
+    <div class="outside"></div>
+    <div class="pedalstem front">
+      <div class="pedalbase front"></div>
+    </div>
+    <div class="pedalstem back">
+      <div class="pedalbase back"></div>
+    </div>
+  </div>
+  <div class="part wheel left">
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+  </div>
+  <div class="part wheel right">
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+    <div class="spoke"></div>
+  </div>
+  <div class="part axis left"></div>
+  <div class="part axis right"></div>
+</div>
+
+<<timed 4.5s>>
+    <<audio "shop-bell" volume 0.55 play>>
+<</timed>>
+
+<<timed 5s t8n>>
+<p>Sunset will be at 3:50 p.m. today and, as per Civil Defence regulations, you must comply with the blackout regulations and mask your windows, skylights, and entrances 30 minutes before the sun goes down.</p>
+
+<<next 2s>>
+<p>Today, your blackout deadline is 3:20 p.m</p>
+
+<p>Right after lunch, some household members walked or biked to the local shop, Greenep’s Tobacco and Sweet Shop.</p>
+
+<p>Greenep’s is the place for essentials like tobacco, maybe one of today’s newspapers from the Manchester Evening News, and the neighbourhood scoops.</p>
+
+<<next 3s>>
+<p>Now they have returned with whatever additional facts, anecdotes, and even rumours they have heard at the shop.</p>
+
+<p>More tea is brewing, and [[someone has made some scones.|SelectHousehold3]]</p>
+
+<</timed>>
+
+<</nobr>>
+
+:: SelectHousehold3
+<h1 class="fade-text" style="text-align:center;">Round 3</h1>
+Select your household.
+
+[[Gamemaster's Clock|Gamemaster3]]
+
+[[Household 1: The Hendersons|Hendersons3]]
+[[Household 2: The Empeys|Empeys3]]
+[[Household 3: The Engels|Engels3]]
+[[Household 4: The Sklars|Sklars3]]
+[[Household 5: The Baileys|Baileys3]]
+
+[[Community Members|Community3]]
+
+<div class="household-page">
+  <img style="width:450px;" src="./assets/images/scones.svg">
+</div>
+
+:: FinalDecisions
+<<nobr>>
+<div class="fade-text" id="panel2">
+    <div class="fade-text notepad-container">
+        <div class="notepad">
+            <div class="top">
+                <div style="display:flex;align-items:center;justify-content:end;height:100%;">
+                    <img class="megaphone-backlight" src="./assets/images/megaphone.svg" onclick="document.getElementById('recording4').play();"/>
+                    <audio id="recording4" src="./assets/audio/r4p5.mp3"></audio>
+                </div>
+            </div>
+            <div class="paper-container">
+                <div class="paper">
+                    Good afternoon.<br>
+                    <br>
+                    This is the final report from Radio MAB.<br>
+                    <br>
+                    Nightfall is upon us and you must decide where you will take shelter if the German air force attacks Manchester this evening.<br>
+                    <br>
+                    Do you stay at home or go to the community air raid shelter in the Cheetham Hill Assembly Rooms on Cheetham Hill Rd?<br>
+                    You have gathered all the information you can and hope you have found out the truth about last night’s air raid.<br>
+                    You have listened to your household and community members, people who you think have authority, knowledge, and expertise.<br>
+                    <br>
+                    Some of this information is accurate.<br>
+                    Some of this information you believe.<br>
+                    And some information you do not necessarily accept, maybe because you suspect it is misinformation or even disinformation.<br>
+                    <br>
+                    As always, you must look within and confront your own biases.<br>
+                    Do not accept information that just confirms your own beliefs.<br>
+                    <br>
+                    Rethink: how do you know what you believe?<br>
+                    <br>
+                    Revise your point of view if your understanding of the threats has changed.<br>
+                    <br>
+                    The stakes are high: you must decide together and carry on.<br>
+                    <br>
+                    Good night and good luck.<br>
+                    <br>
+                    <p class="paper-end" style="text-align:center;">[[Radio MAB signing off.|AirDefence]]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<</nobr>>
+
+:: AirDefence
+<<nobr>>
+<<audio "air-raid-bbc" volume 1 play>>
+<div class="plane-container">
+  <img class="plane" src="./assets/images/plane.svg">
+</div>
+<<timed 5s t8n>>
+  <div style="position: fixed;inset: 0;width: fit-content;height: fit-content;margin: auto;">
+    <p>[[Who will survive?|FinalCredits]]</p>
+  </div>
+<</timed>>
+<</nobr>>
+
+:: FinalCredits
+<<nobr>>
+<<audio "game-theme" volume 0 fadeoverto 7 0.75>>
+
+<div class="fade-text">
+    <h1>Credits</h1>
+
+    <p>Game design by Martha Attridge Bufton (Carleton University), based on //Making history: The breakup// by Nick Proctor (Simpson College) and adaptation by Aaron Cowan (Slippery Rock University)</p>
+
+    <p>Web design by Chantal Brousseau and Alesya Moshchenskaya, Carleton University.</p>
+
+    <p>Music by Diego Guzman.</p>
+
+    <p>Voice work by Sean Bufton and Linnet Whiston.</p>
+</div>
+
+<</nobr>>
+
